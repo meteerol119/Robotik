@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Otizmi Tanıyalım — Farkındalık Sitesi</title>
+<meta name="description" content="Otizm hakkında doğru bilgi, erken işaretler, tanı süreci, destek yolları ve günlük hayatta nasıl destek olunacağı.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--bg:#F5F8FB;--surface:#fff;--ink:#1D2842;--muted:#4A5675;--line:#D5DDEA;--gold:#E3A008;--teal:#1F8A82;--lilac:#7A64D6;--coral:#E0645A;
+--head:"Bricolage Grotesque","Atkinson Hyperlegible",system-ui,sans-serif;--body:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#111A2E;--surface:#192541;--ink:#EEF2FA;--muted:#B3BEDA;--line:#2C3B60;--gold:#F2B632;--teal:#4CC2B8;--lilac:#A796F0;--coral:#F08C83}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#111A2E;--surface:#192541;--ink:#EEF2FA;--muted:#B3BEDA;--line:#2C3B60;--gold:#F2B632;--teal:#4CC2B8;--lilac:#A796F0;--coral:#F08C83}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+html[data-big="on"]{font-size:118%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.125rem/1.7 var(--body)}
+h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--lilac);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.25rem}
+section{padding:4rem 0}
+p{max-width:62ch;margin:0 0 1rem}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:var(--ink);color:var(--bg);padding:.5rem 1rem;z-index:5}
+.top{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 0 .5rem;flex-wrap:wrap}
+.brand{font:800 1.15rem var(--head);text-decoration:none}
+.tools{display:flex;gap:.5rem}
+.tool{font:700 .95rem var(--body);background:var(--surface);color:var(--ink);border:2px solid var(--line);border-radius:999px;padding:.45rem 1rem;cursor:pointer}
+.tool[aria-pressed="true"]{border-color:var(--teal);background:var(--teal);color:#fff}
+.nav{display:flex;flex-wrap:wrap;gap:.1rem 1.2rem;padding:.25rem 0 1rem;border-bottom:1px solid var(--line);font-size:1rem}
+.nav a{text-decoration:none;font-weight:700;padding:.3rem 0}.nav a:hover{text-decoration:underline}
+.hero{padding:2.5rem 0 3rem;display:grid;gap:2rem;grid-template-columns:1.1fr .9fr;align-items:center}
+.hero h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:800;letter-spacing:-.02em;margin-bottom:1.25rem}
+.hero p{font-size:1.25rem;color:var(--muted)}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.25rem}
+.btn{display:inline-block;text-decoration:none;font:700 1rem var(--body);padding:.8rem 1.3rem;border-radius:10px;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.btn.main{background:var(--ink);color:var(--bg)}
+.inf{width:100%;height:auto}
+.inf path{fill:none;stroke:url(#g);stroke-width:26;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:0;animation:draw 3.2s ease-out both}
+@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+[data-calm="on"] .inf path{animation:none;filter:saturate(.45)}
+@media (prefers-reduced-motion:reduce){.inf path{animation:none}html{scroll-behavior:auto}}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin-bottom:1.1rem;max-width:22ch}
+h3{font-size:1.25rem;font-weight:800;margin-bottom:.35rem}
+.lead{font-size:1.2rem;color:var(--muted)}
+.split{display:grid;gap:3rem;grid-template-columns:1fr 1fr}
+.cols{display:grid;gap:1.5rem;grid-template-columns:repeat(3,1fr);margin-top:1.5rem}
+.cols>div{border-top:5px solid var(--c,var(--teal));padding-top:.9rem}
+.cols p{color:var(--muted);margin:0}
+dl{margin:0}dl div{padding:1rem 0 1rem 1.1rem;border-left:5px solid var(--c,var(--teal))}dl div+div{margin-top:.5rem}
+dt{font:800 1.2rem var(--head)}dd{margin:.2rem 0 0;color:var(--muted)}
+.band{background:var(--surface);border-block:1px solid var(--line)}
+ul.plain{margin:0 0 1rem;padding-left:1.2rem}ul.plain li{margin:.35rem 0;color:var(--muted)}ul.plain li::marker{color:var(--lilac)}
+.steps{list-style:none;counter-reset:s;padding:0;margin:1.5rem 0 0;display:grid;gap:1.25rem;grid-template-columns:repeat(4,1fr)}
+.steps li{counter-increment:s;border-top:5px solid var(--teal);padding-top:.7rem}
+.steps li::before{content:counter(s);font:800 2rem var(--head);color:var(--teal);display:block}
+.steps span{color:var(--muted);display:block}
+details{border-bottom:1px solid var(--line);padding:1rem 0}
+summary{cursor:pointer;font:700 1.15rem var(--body);list-style:none;display:flex;gap:.75rem;align-items:flex-start}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+";font:800 1.4rem/1 var(--head);color:var(--lilac);width:1.2rem;flex:none}
+details[open] summary::before{content:"–"}
+details p{margin:.75rem 0 0 2rem;color:var(--muted)}
+.quiz{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.5rem;max-width:640px}
+.quiz .q{font:800 1.3rem/1.3 var(--head);margin-bottom:.5rem;max-width:none}
+.quiz .fb{min-height:3.4rem;color:var(--muted)}
+.meta{color:var(--muted);font-size:.95rem;margin-bottom:.5rem}
+.day{border-radius:18px;padding:2rem;background:linear-gradient(120deg,var(--gold),var(--coral),var(--lilac));color:#1D2842}
+[data-calm="on"] .day{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+.day h2{max-width:none}.day p{max-width:56ch}
+.events{list-style:none;padding:0;margin:0}
+.events li{display:grid;grid-template-columns:9rem 1fr;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--line)}
+.events b{font-family:var(--head)}.events span{color:var(--muted)}
+.note{border:2px dashed var(--line);border-radius:12px;padding:1.1rem 1.4rem;color:var(--muted)}
+.note p:last-child{margin:0}
+form{display:grid;gap:1rem;max-width:560px}
+label{font-weight:700;display:grid;gap:.3rem}
+input,textarea{font:inherit;color:var(--ink);background:var(--surface);border:2px solid var(--line);border-radius:10px;padding:.7rem .9rem;width:100%}
+textarea{min-height:130px;resize:vertical}
+footer{padding:2.5rem 0 3rem;color:var(--muted);font-size:1rem;border-top:1px solid var(--line)}
+@media (max-width:760px){.hero,.split,.cols,.steps{grid-template-columns:1fr}section{padding:2.75rem 0}.hero{padding-bottom:1.5rem}.events li{grid-template-columns:1fr;gap:.1rem}}
+</style>
+</head>
+<body>
+<a class="skip" href="#icerik">İçeriğe geç</a>
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="#top">♾ Otizmi Tanıyalım</a>
+  <div class="tools">
+    <button class="tool" id="big" aria-pressed="false" title="Yazıyı büyütür">A+</button>
+    <button class="tool" id="calm" aria-pressed="false" title="Renkleri ve hareketi azaltır">Sakin mod: kapalı</button>
+  </div>
+</header>
+<nav class="nav" aria-label="Sayfa bölümleri">
+  <a href="#nedir">Otizm nedir?</a><a href="#isaretler">Erken işaretler</a><a href="#tani">Tanı süreci</a><a href="#destek-turleri">Destek yolları</a><a href="#yanlislar">Yanlışlar</a><a href="#test">Mini test</a><a href="#yasam">Günlük yaşam</a><a href="#dil">Dil</a><a href="#etkinlik">Etkinlikler</a><a href="#sss">SSS</a><a href="#iletisim">İletişim</a>
+</nav>
+<main id="icerik">
+  <div class="hero" id="top">
+    <div>
+      <h1>Farklı düşünen zihinler için daha anlayışlı bir dünya.</h1>
+      <p>Otizm bir hastalık değil, doğuştan gelen bir nörogelişimsel farklılıktır. Bu sitede otizmi doğru bilgiyle tanıyor, otizmli bireylere ve ailelerine nasıl destek olabileceğimizi birlikte öğreniyoruz.</p>
+      <div class="btns"><a class="btn main" href="#nedir">Otizm nedir?</a><a class="btn" href="#yasam">Nasıl destek olurum?</a></div>
+    </div>
+    <svg class="inf" viewBox="0 0 400 200" role="img" aria-label="Çok renkli sonsuzluk simgesi: nörofarklılığı ve otizm spektrumunun çeşitliliğini temsil eder">
+      <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#E0645A"/><stop offset=".35" stop-color="#E3A008"/><stop offset=".65" stop-color="#1F8A82"/><stop offset="1" stop-color="#7A64D6"/></linearGradient></defs>
+      <path pathLength="1" d="M200 100C260 20 360 20 360 100C360 180 260 180 200 100C140 20 40 20 40 100C40 180 140 180 200 100Z"/>
+    </svg>
+  </div>
+
+  <section id="nedir" style="padding-top:1.5rem">
+    <div class="split">
+      <div>
+        <h2>Otizm bir spektrumdur</h2>
+        <p>Otizm spektrum bozukluğu, kişinin çevresini algılama, iletişim kurma ve dünyayla etkileşme biçimini etkileyen bir durumdur. Belirtiler genellikle erken çocuklukta fark edilir ve yaşam boyu sürer.</p>
+        <p>“Spektrum”, her otizmli kişinin farklı olduğu anlamına gelir. Dünya Sağlık Örgütü’ne göre yaklaşık her 100 çocuktan biri otizmlidir. Biri günlük yaşamda az desteğe ihtiyaç duyarken, bir başkası yoğun destek isteyebilir.</p>
+      </div>
+      <dl>
+        <div style="--c:var(--coral)"><dt>İletişim</dt><dd>Konuşma, jest ve mimikleri kullanma ya da yorumlama biçimi farklı olabilir. Bazı bireyler hiç konuşmaz; yazı, kartlar ve cihazlarla iletişim kurar.</dd></div>
+        <div style="--c:var(--gold)"><dt>Duyusal algı</dt><dd>Ses, ışık, doku ve kalabalık çok yoğun hissedilebilir. Bazı bireyler ise belirli duyusal girdileri aktif olarak arar.</dd></div>
+        <div style="--c:var(--teal)"><dt>Rutinler</dt><dd>Öngörülebilirlik güven verir. Planın ani değişmesi kişiyi çok zorlayabilir.</dd></div>
+        <div style="--c:var(--lilac)"><dt>İlgi alanları</dt><dd>Seçilen konulara derin ve uzun süreli ilgi, çoğu zaman büyük bir güçtür.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="band" id="isaretler" style="margin-inline:calc(50% - 50vw);padding-inline:calc(50vw - 50%)">
+    <h2>Erken işaretler neler olabilir?</h2>
+    <p class="lead">Aşağıdakiler tek başına tanı koydurmaz. Çocuğunuzun gelişiminden endişe ediyorsanız çocuk doktorunuza danışın.</p>
+    <div class="cols">
+      <div style="--c:var(--coral)"><h3>Sosyal iletişim</h3><ul class="plain"><li>Adı söylendiğinde tepki vermeme</li><li>Göz temasından kaçınma</li><li>İşaret etme, el sallama gibi jestlerin geç gelişmesi</li><li>Akranlarla oyun kurmakta zorlanma</li></ul></div>
+      <div style="--c:var(--gold)"><h3>Dil ve konuşma</h3><ul class="plain"><li>Konuşmanın gecikmesi veya duyulan sözcüklerin tekrarı</li><li>İsteklerini sözle veya jestle anlatmakta güçlük</li><li>Mecaz ve espriyi anlamakta zorlanma</li></ul></div>
+      <div style="--c:var(--teal)"><h3>Davranış ve duyular</h3><ul class="plain"><li>Tekrarlayan hareketler ve ilgiler</li><li>Rutin değişince yoğun sıkıntı</li><li>Ses, doku veya ışığa güçlü tepki</li></ul></div>
+    </div>
+  </section>
+
+  <section id="tani">
+    <h2>Tanı nasıl konur, süreç nasıl işler?</h2>
+    <p class="lead">Tanı, tek bir test ile değil; gelişim öyküsü, gözlem ve standart değerlendirme araçlarıyla uzmanlarca konur. Ne kadar erken başlanırsa destek o kadar etkili olabilir.</p>
+    <ol class="steps">
+      <li><h3>Fark etme</h3><span>Aile veya öğretmen gelişimde bir farklılık fark eder.</span></li>
+      <li><h3>Çocuk doktoru</h3><span>İlk değerlendirme yapılır, gerekirse yönlendirme alınır.</span></li>
+      <li><h3>Uzman değerlendirmesi</h3><span>Çocuk psikiyatristi veya gelişimsel çocuk uzmanı ayrıntılı değerlendirme yapar.</span></li>
+      <li><h3>Destek planı</h3><span>Çocuğun ihtiyacına göre eğitim ve terapi planlanır.</span></li>
+    </ol>
+    <div class="note" style="margin-top:1.5rem"><p>Eğitim desteği için genellikle sağlık raporu ve Rehberlik ve Araştırma Merkezi (RAM) değerlendirmesi gerekir. Güncel süreç ve belgeler değişebilir; ilgili kurumlardan teyit edin.</p></div>
+  </section>
+
+  <section class="band" id="destek-turleri" style="margin-inline:calc(50% - 50vw);padding-inline:calc(50vw - 50%)">
+    <h2>Destek yolları</h2>
+    <p class="lead">Her otizmli birey farklıdır; uygun destek kişiye ve ihtiyacına göre uzmanlarla birlikte belirlenir.</p>
+    <details><summary>Özel eğitim</summary><p>Çocuğun gelişim düzeyine uygun, bireysel hedeflerle yürütülen eğitimdir. İletişim, öz bakım ve sosyal beceriler üzerine çalışılır.</p></details>
+    <details><summary>Dil ve konuşma terapisi</summary><p>Konuşmayı, anlamayı ve iletişim becerilerini geliştirmeyi amaçlar. Konuşmayan bireyler için alternatif iletişim yöntemleri de kullanılır.</p></details>
+    <details><summary>Ergoterapi ve duyusal destek</summary><p>Duyusal farklılıklarla başa çıkmayı, günlük yaşam becerilerini ve ince motor gelişimi destekler.</p></details>
+    <details><summary>Davranışsal ve gelişimsel yaklaşımlar</summary><p>Uygulamalı davranış analizi ve oyun temelli gelişimsel yaklaşımlar gibi yöntemler vardır. Hangisinin uygun olduğuna uzmanlarla birlikte karar verilmelidir.</p></details>
+    <details><summary>Alternatif iletişim (AAC)</summary><p>Resimli kartlar, tablet uygulamaları ve iletişim cihazları, sözel konuşması sınırlı bireylerin kendini ifade etmesine yardımcı olur.</p></details>
+  </section>
+
+  <section id="yanlislar">
+    <h2>Yaygın yanlışlar, doğrusu</h2>
+    <p>Başlıklara dokunarak doğru bilgiyi görün.</p>
+    <details><summary>“Otizm aşılardan kaynaklanır.”</summary><p>Yanlış. Çok sayıda büyük bilimsel çalışma, aşılar ile otizm arasında bir bağlantı bulmamıştır. Otizmin gelişiminde genetik ve erken gelişimsel etkenler rol oynar.</p></details>
+    <details><summary>“Otizmli kişiler duygu hissetmez.”</summary><p>Yanlış. Otizmli bireyler duygu hisseder, hatta çoğu zaman çok yoğun yaşar. Yalnızca duygularını ifade etme biçimleri farklı olabilir.</p></details>
+    <details><summary>“Otizm yalnızca çocuklarda görülür.”</summary><p>Yanlış. Otizm yaşam boyu sürer. Pek çok kişi yetişkinlikte tanı alır ve destekten fayda görür.</p></details>
+    <details><summary>“Her otizmli kişi bir konuda dahidir.”</summary><p>Yanlış. Bazı bireylerin belirli alanlarda olağanüstü yetenekleri olabilir, ancak her otizmliden bunu beklemek de bir kalıp yargıdır.</p></details>
+    <details><summary>“Otizm iyileştirilip geçirilmelidir.”</summary><p>Otizm bir hastalık olmadığı için “iyileştirilecek” bir durum değildir. Erken eğitim ve bireye uygun destek, kişinin kendini ifade etmesine ve bağımsızlığına katkı sağlar.</p></details>
+  </section>
+
+  <section class="band" id="test" style="margin-inline:calc(50% - 50vw);padding-inline:calc(50vw - 50%)">
+    <h2>Mini farkındalık testi</h2>
+    <p>Beş ifade, doğru mu yanlış mı?</p>
+    <div class="quiz" id="quiz" aria-live="polite">
+      <div class="meta" id="qmeta"></div>
+      <p class="q" id="qtext"></p>
+      <div class="btns" id="qbtns"><button class="btn" data-a="1">Doğru</button><button class="btn" data-a="0">Yanlış</button></div>
+      <p class="fb" id="qfb"></p>
+      <button class="btn main" id="qnext" hidden>Sonraki</button>
+    </div>
+  </section>
+
+  <section id="yasam">
+    <h2>Günlük hayatta nasıl destek oluruz?</h2>
+    <div class="cols">
+      <div style="--c:var(--coral)"><h3>Evde ve ailede</h3><ul class="plain"><li>Günlük programı öngörülebilir tutun.</li><li>Kısa, net cümleler kullanın ve yanıt için zaman tanıyın.</li><li>Aileye eleştiri yerine dinleme ve pratik destek sunun.</li></ul></div>
+      <div style="--c:var(--gold)"><h3>Okulda</h3><ul class="plain"><li>Görsel programlar ve net yönergeler kullanın.</li><li>Sessiz bir mola alanı sağlayın.</li><li>Akran zorbalığına karşı sınıfta farkındalık çalışması yapın.</li></ul></div>
+      <div style="--c:var(--teal)"><h3>İş yerinde</h3><ul class="plain"><li>Görevleri ve beklentileri yazılı ve açık verin.</li><li>Gürültüsüz veya esnek bir çalışma düzeni sunun.</li><li>Güçlü yönlere uygun işler tanımlayın.</li></ul></div>
+    </div>
+    <p style="margin-top:1.5rem">Gürültülü ortamlarda kulaklığa, ışığa duyarlı kişiler için loş bir köşeye izin vermek gibi küçük düzenlemeler büyük fark yaratır. Göz temasına veya dokunmaya zorlamayın; kişinin iletişim yolunu kabul edin.</p>
+  </section>
+
+  <section class="band" id="dil" style="margin-inline:calc(50% - 50vw);padding-inline:calc(50vw - 50%)">
+    <div class="split">
+      <div>
+        <h2>Dilimiz de önemli</h2>
+        <p>Kullandığımız sözcükler, otizmli bireylere bakışımızı şekillendirir. Mümkünse kişinin kendi tercihine uyun.</p>
+      </div>
+      <dl>
+        <div style="--c:var(--teal)"><dt>“Otizmli birey” ya da “otizmi olan birey”</dt><dd>İki kullanım da yaygındır. Kişi hangisini tercih ediyorsa onu kullanın.</dd></div>
+        <div style="--c:var(--coral)"><dt>“Hasta” veya “zihinsel engelli” demekten kaçının</dt><dd>Otizm bir hastalık değildir ve her otizmli kişi zihinsel yetersizlik yaşamaz.</dd></div>
+        <div style="--c:var(--gold)"><dt>“Yüksek/düşük işlevli” yerine destek ihtiyacı</dt><dd>“Az destek” veya “yoğun destek ihtiyacı” gibi ifadeler daha doğrudur.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="etkinlik">
+    <div class="day">
+      <h2>2 Nisan: Dünya Otizm Farkındalık Günü</h2>
+      <p>Her yıl 2 Nisan’da dünyanın dört bir yanında otizm farkındalığı için etkinlikler düzenlenir. Siz de çevrenizle bu sayfayı paylaşarak, bir etkinliğe katılarak veya bir kuruluşa destek olarak katkıda bulunabilirsiniz.</p>
+    </div>
+    <h3 style="margin:2rem 0 .5rem">Etkinlik takvimi</h3>
+    <ul class="events">
+      <li><b>2 Nisan</b><span>Dünya Otizm Farkındalık Günü. Etkinlik detaylarını buraya ekleyin.</span></li>
+      <li><b>[Tarih]</b><span>[Etkinlik adı, yer ve kayıt bilgisi]</span></li>
+      <li><b>[Tarih]</b><span>[Atölye, söyleşi veya aile buluşması]</span></li>
+    </ul>
+  </section>
+
+  <section class="band" id="sss" style="margin-inline:calc(50% - 50vw);padding-inline:calc(50vw - 50%)">
+    <h2>Sık sorulan sorular</h2>
+    <details><summary>Çocuğumda otizm olduğundan şüphelenirsem ne yapmalıyım?</summary><p>Önce çocuk doktorunuza başvurun, gözlemlerinizi not alın ve gerekirse çocuk psikiyatristine yönlendirilmeyi isteyin. Beklemek yerine erken değerlendirme yaptırmak faydalıdır.</p></details>
+    <details><summary>Otizm genetik midir?</summary><p>Araştırmalar genetik etkenlerin önemli rol oynadığını gösteriyor. Ancak tek bir nedeni yoktur ve çevresel etkenler de araştırılmaktadır.</p></details>
+    <details><summary>Otizmli bireyler bağımsız yaşayabilir mi?</summary><p>Evet, birçoğu uygun destekle okur, çalışır ve bağımsız yaşar. Bazı bireyler ise yaşam boyu daha yoğun destek ihtiyacı duyar. İkisi de otizm spektrumunun parçasıdır.</p></details>
+    <details><summary>Otizmli biriyle karşılaştığımda nasıl davranmalıyım?</summary><p>Saygılı olun, sakin ve açık konuşun, acele ettirmeyin. Emin değilseniz kişiye veya yakınına nasıl yardımcı olabileceğinizi sorun.</p></details>
+    <details><summary>Bu sitedeki bilgiler tanı yerine geçer mi?</summary><p>Hayır. Bilgiler genel farkındalık amaçlıdır. Tanı ve tedavi için bir uzmana başvurun.</p></details>
+  </section>
+
+  <section id="kaynaklar">
+    <h2>Kaynaklar</h2>
+    <ul class="plain">
+      <li><a href="https://www.who.int/news-room/fact-sheets/detail/autism-spectrum-disorders" target="_blank" rel="noopener">Dünya Sağlık Örgütü: Otizm spektrum bozuklukları bilgi notu</a></li>
+      <li>[Yerel otizm dernekleri ve vakıflar: bağlantıları buraya ekleyin]</li>
+      <li>[Uzman kliniği veya hastane bağlantıları]</li>
+    </ul>
+  </section>
+
+  <section id="iletisim" style="padding-top:0">
+    <h2>Bize ulaşın</h2>
+    <p>Mesajınız e-posta uygulamanızda hazır bir taslak olarak açılır.</p>
+    <form id="cf">
+      <label>Adınız<input id="cn" required autocomplete="name"></label>
+      <label>Mesajınız<textarea id="cm" required></textarea></label>
+      <div><button class="btn main" type="submit">E-posta taslağını aç</button></div>
+    </form>
+    <div class="note" style="margin-top:1.25rem"><p>Not: Bu form <b>info@ornek.org</b> adresini kullanır; yayına almadan önce sayfa kodunda kendi e-posta adresinizle değiştirin.</p></div>
+  </section>
+</main>
+<footer>
+  <p style="margin:0">Bu sayfadaki bilgiler genel farkındalık amaçlıdır; tanı veya tedavi yerine geçmez. Otizmden şüpheleniyorsanız bir çocuk psikiyatristine veya uzman hekime başvurun.</p>
+</footer>
+</div>
+<script>
+(function(){
+var r=document.documentElement;
+function tog(id,attr,txt){var b=document.getElementById(id);b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',String(on));if(on){r.setAttribute(attr,'on')}else{r.removeAttribute(attr)}if(txt)b.textContent=txt+(on?'açık':'kapalı')})}
+tog('calm','data-calm','Sakin mod: ');tog('big','data-big');
+var Q=[["Otizmli kişiler duygularını hiç hissetmez.",0,"Yanlış. Duygular çoğu zaman yoğun yaşanır; yalnızca ifade biçimi farklı olabilir."],
+["Otizm belirtileri genellikle erken çocuklukta fark edilir.",1,"Doğru. Belirtiler çoğunlukla ilk yıllarda görülür, ama bazı kişiler yetişkinlikte tanı alır."],
+["Her otizmli kişinin ihtiyaçları aynıdır.",0,"Yanlış. Spektrum, ihtiyaçların kişiden kişiye çok değiştiği anlamına gelir."],
+["Otizmli birinin gürültüden rahatsız olması kapris değil, duyusal bir farklılıktır.",1,"Doğru. Duyusal algı farklı olabilir; yoğun sesler gerçekten sıkıntı verebilir."],
+["Erken destek, çocuğun gelişimine katkı sağlar.",1,"Doğru. Erken eğitim ve bireye uygun destek iletişimi ve bağımsızlığı güçlendirir."]];
+var i=0,s=0,locked=false,$=function(x){return document.getElementById(x)};
+function show(){locked=false;$('qfb').textContent='';$('qnext').hidden=true;$('qbtns').hidden=false;
+if(i>=Q.length){$('qmeta').textContent='Sonuç';$('qtext').textContent=s+' / '+Q.length+' doğru. Bildiklerinizi çevrenizle paylaşın!';$('qbtns').hidden=true;$('qnext').hidden=false;$('qnext').textContent='Yeniden dene';return}
+$('qmeta').textContent='Soru '+(i+1)+' / '+Q.length;$('qtext').textContent=Q[i][0];$('qnext').textContent='Sonraki'}
+$('qbtns').addEventListener('click',function(e){var a=e.target.getAttribute('data-a');if(a===null||locked)return;locked=true;
+var ok=(+a===Q[i][1]);if(ok)s++;$('qfb').textContent=(ok?'Doğru cevap. ':'Tekrar bakalım. ')+Q[i][2];$('qnext').hidden=false});
+$('qnext').addEventListener('click',function(){if(i>=Q.length){i=0;s=0}else{i++}show()});
+show();
+$('cf').addEventListener('submit',function(e){e.preventDefault();
+location.href='mailto:info@ornek.org?subject='+encodeURIComponent('Web sitesinden mesaj')+'&body='+encodeURIComponent($('cm').value+'\n\n'+$('cn').value)});
+})();
+</script>
+</body>
+</html>
